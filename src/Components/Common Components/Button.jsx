@@ -9,6 +9,8 @@ export default function Button({
   to = null,
   onclick = null,
   disabled = false,
+  bold="",
+  font=""
 }) {
   return (
     <button

@@ -1,14 +1,16 @@
 import React,{useEffect, useRef, useState} from 'react'
-import journalHeaderBg from "../../assets/images/journalHeaderBg.png";
 import Button from '../Common Components/Button';
 import Lottie from "lottie-react"
 import BreathExercise from "../../assets/animations/breathingExe1.json"
 import PastPage from '../Common Components/PastPage';
+import Timer from './Timer';
 
 
 export default function GuidedBreathing() {
 
   const [isActive, setIsActive] = useState(false);
+  const [btnText,setBtnText] = useState("Play");
+  const [timerState,setTimerState] = useState(false);
   let lottieRef  = useRef(null);
 
 
@@ -21,11 +23,14 @@ export default function GuidedBreathing() {
 
 const actionPlayed = () =>{
 if(isActive){
+  setBtnText("Pause")
+  setTimerState(false)
   setIsActive(false);
   lottieRef.current.pause();
 }
 else {
-
+setBtnText("Play")
+setTimerState(true)
 setIsActive(true);
 lottieRef.current.play();
 
@@ -38,22 +43,14 @@ lottieRef.current.play();
 
   return (
     <>
-      <img
-              src={journalHeaderBg}
-              alt=""
-              className=" absolute top-0 -z-50 h-24 w-screen bg-no-repeat"
-            />
+     
     
-<section className='py-10 mx-10'>
-  <PastPage path={"/grounding-tool-library"}/>
- <section className='shadow-xl flex flex-col items-center gap-y-5 justify-center  mb-20 px-20 h-screen relative '>
+
+  {/* <PastPage path={"/grounding-tool-library"}/> */}
+ <section className='flex flex-col items-center gap-y-2 justify-center  relative '>
 
 {/* Exercise Description */}
-
-<div className='flex flex-col gap-3 items-center'>
-<p className='text-center font-normal text-2xl'>Inhale and Exhale</p>
-<Button text="Start/Stop" onclick={actionPlayed} bgColor='bg-[#CBCBE7]'/>
-</div>
+<p className='text-center font-semibold  text-4xl'>Breathing Exercise</p>
 
 {/* Exercise */}
 
@@ -61,7 +58,14 @@ lottieRef.current.play();
             loop
           lottieRef={lottieRef}
             style={{ height: "300px", width: "300px" }}/>
-</section></section>
+
+<Timer active={timerState}/>
+
+{/* start stop button */}
+<Button text={btnText} onclick={actionPlayed} font='text-2xl' bold='font-semibold'  />
+
+
+</section>
    
 
     </>

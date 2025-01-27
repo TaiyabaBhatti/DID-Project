@@ -3,6 +3,9 @@ import journalHeaderBg from "../../assets/images/journalHeaderBg.png";
 import dashboardBg from "../../assets/images/background.png";
 import Button from "../Common Components/Button";
 import Card from "../Common Components/Card";
+import Wrapper from "../Common Components/Wrapper";
+import GuidedBreathing from "./GuidedBreathing";
+import SensoryExercises from "./SensoryExercises";
 
 export default function GroundingToolLibrary() {
 
@@ -27,15 +30,15 @@ export default function GroundingToolLibrary() {
   return (
     <>
       {/* About */}
-      <section className=" h-screen mb-10">
+      <section className=" h-screen mb-10 -mt-24 flex items-center">
         <img
           src={dashboardBg}
           alt=""
-          className="h-screen absolute top-0 -z-50 w-screen bg-no-repeat"
+          className="h-screen absolute top-0 -z-50 w-screen bg-no-repeat object-cover"
         />
         <div
           id="dashboard-about-heading"
-          className="max-w-4xl px-10 translate-y-1/2 flex flex-col items-center gap-y-6  m-auto text-white"
+          className="max-w-4xl px-10 flex flex-col items-center gap-y-6  m-auto text-white"
         >
           <h1 className="text-center font-bold text-6xl ">
             Grounding Tool Library
@@ -47,15 +50,20 @@ export default function GroundingToolLibrary() {
         </div>
       </section>
 
-      {/* Tools cards */}
-      <section className="py-10 px-10  mb-10  ">
-        <div className="flex gap-5 flex-row flex-wrap items-center justify-center">
-         
-          {toolCards.map((card) => {
-            return <Card btnText={card.buttonText} btnBgColor={"bg-slate-600"} btnTextColor={"text-white"} contentDesc={card.description} to={card.pageNavigation}/>;
-          })}
-        </div>
-      </section>
+      {/*  Exercises */}
+
+      <Wrapper bgColor="bg-light-purple ">
+       <GuidedBreathing/>
+        </Wrapper>
+
+        <Wrapper>
+       <SensoryExercises/>
+        </Wrapper>
+
+
+
+
+
     </>
   );
 }
