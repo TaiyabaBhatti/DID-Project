@@ -27,9 +27,11 @@ export default function EditProfile() {
     setError
   } = useForm({defaultValues:{
 name:"",
-username:"",
-password:"",
+username:""
   }});
+
+
+console.log(getAuth())
 
  useEffect(()=>{
 
@@ -66,42 +68,38 @@ const editProfile = async(data)=>{
 
 setLoading(true);
 
+try { 
+
  const status = await validatePassword(getAuth(), data.password);
+console.log(status.data)
 
-
-if(status.isValid){
-
-  try {       
-  const updatedProfileData = {
-        name: data.name || profileData?.[0]?.name, // Preserve old value if not updated
-        username: data.username || profileData?.[0]?.username, 
-        password: data.password || profileData?.[0]?.password, 
-      };
-    
-    const profileDocRef = doc(db, "Users", currUser.uid, "profile", profileDocId || "");
-    await setDoc(profileDocRef, updatedProfileData, { merge: true });
-    navigate("/moodtracker");
-   
-  } catch (error) {
-    console.error("Failed to update profile:", error.message);
-  }
+if(!status.isValid){
+  setError("password",{type:"manual",message:"Password not matched"})
+  console.log("Not valid password")
+  setLoading(false);
+  return;
+ 
 }
 
-    else{
-      setError("password",{type:"manual",message:"Password not matched"})
-      console.log("Not valid password")
-    }
-
-
-    setLoading(false); 
-
+        
+      const updatedProfileData = {
+            name: data.name || profileData?.[0]?.name, // Preserve old value if not updated
+            username: data.username || profileData?.[0]?.username, 
+           
+          };
+        
+        const profileDocRef = doc(db, "Users", currUser.uid, "profile", profileDocId || "");
+        await setDoc(profileDocRef, updatedProfileData, { merge: true });
+        navigate("/moodtracker");
+       
+      } catch (error) {
+        console.error("Failed to update profile:", error.message);
+      }
+      finally {
+        setLoading(false);
+      }
 
 }
-
-
-
-
-
 
   return (
 

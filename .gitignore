@@ -12,8 +12,7 @@ dist
 dist-ssr
 *.local
 firebase-messaging-sw.js
-src/Configuration/firebase-config.js
-src/Components/Noifications/requestPermission.js
+
 
 # Editor directories and files
 .vscode/*

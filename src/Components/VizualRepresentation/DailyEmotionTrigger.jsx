@@ -23,7 +23,7 @@ export default function DailyEmotionTrigger({data}) {
 
     const todayDate=moment().format('LL'); 
     // calling function for getting data
-let chartData = data?dailyUserData(data):[];
+let chartData = data && dailyUserData(data);
 
 const dataSet =  {
     labels:chartData?.map((obj)=> obj.time?obj.time:"1:02"),

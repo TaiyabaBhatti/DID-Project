@@ -10,6 +10,7 @@ export default function Timer({active}) {
         remainingTime:0,
         startTimer:0,
      }
+     
      useEffect(()=>{
 
 const intervalId = setInterval(()=>{

@@ -14,7 +14,7 @@ const  colorSchema =color;
    const startOfWeek = moment().startOf('week').format("YYYY-MM-DD");
    const endOfWeek = moment().endOf('week').format("YYYY-MM-DD");
 
-let chartData = weeklyUserData(data,startOfWeek,endOfWeek);
+let chartData =data && weeklyUserData(data,startOfWeek,endOfWeek);
 
 console.log(data,chartData)
 

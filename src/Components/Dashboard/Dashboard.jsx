@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect,useState } from "react";
 import Header from "../Common Components/Header";
 import dashboardBg from "../../assets/images/background.png";
 import Card from "../Common Components/Card";
@@ -7,21 +7,28 @@ import { Outlet } from "react-router-dom";
 import Footer from "../Common Components/Footer";
 import Wrapper from "../Common Components/Wrapper";
 import AuthContext from "../context/authContext";
+import LoadingAnim from "../Common Components/LoadingAnim";
 
 export default function Dashboard() {
 
-  const {patientName} = useContext(AuthContext);
+  const {patientName,authSuccess} = useContext(AuthContext);
+ const [loading,setLoading] = useState(true)
 
+useEffect(()=>{
 
+setLoading(!patientName)
 
+},[patientName,authSuccess])
 
 
 
 
   return (
+
+    
     <>
       {/* About */}
-      <section className=" h-screen mb-10 -mt-24 flex items-center">
+      <section className={`${loading?"blur-sm":""} h-screen mb-10 -mt-24 flex items-center`}>
         {/* dashboard-about-screen-bg-image */}
         <img
           src={dashboardBg}
@@ -34,22 +41,17 @@ export default function Dashboard() {
         >
           <h1 className="text-center font-bold text-6xl ">Dashboard</h1>
           <p className="text-center font-normal text-4xl">
-            Hello, {patientName || "..."}! How are you feeling today?
+            Hello, {patientName || "Lisa"}! How are you feeling today?
           </p>
           <Button text={"Explore dashboard"} bgColor={"bg-slate-200"} />
          
         </div>
       </section>
 
-      {/* <Wrapper height="h-screen" bgColor="bg-slate-400"></Wrapper>
-      <Wrapper height="h-screen" bgColor="bg-slate-400"></Wrapper>
-      <Wrapper height="h-screen" bgColor="bg-slate-400"></Wrapper> */}
-
-
       {/* Track */}
-<Wrapper height="h-screen" bgColor="bg-slate-400">
+<Wrapper height="h-screen" bgColor="bg-light-purple ">
 
-<div className="translate-y-1/2 max-w-4xl  flex flex-col items-center gap-y-6  m-auto text-black ">
+<div className="translate-y-1/2 max-w-4xl bg-light-purple  flex flex-col items-center gap-y-6  m-auto text-black ">
           <h1 className="text-center font-bold text-6xl ">
             Mood Tracker Summary
           </h1>
@@ -125,6 +127,9 @@ export default function Dashboard() {
       </Wrapper>
     
       
+{loading && <LoadingAnim/>}
+
+
     </>
   );
 }
