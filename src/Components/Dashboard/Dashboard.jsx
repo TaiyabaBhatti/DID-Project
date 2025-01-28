@@ -1,4 +1,4 @@
-import React, { useContext, useEffect,useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Header from "../Common Components/Header";
 import dashboardBg from "../../assets/images/background.png";
 import Card from "../Common Components/Card";
@@ -8,27 +8,22 @@ import Footer from "../Common Components/Footer";
 import Wrapper from "../Common Components/Wrapper";
 import AuthContext from "../context/authContext";
 import LoadingAnim from "../Common Components/LoadingAnim";
-
 export default function Dashboard() {
+  const { patientName, authSuccess } = useContext(AuthContext);
+  const [loading, setLoading] = useState(true);
 
-  const {patientName,authSuccess} = useContext(AuthContext);
- const [loading,setLoading] = useState(true)
-
-useEffect(()=>{
-
-setLoading(!patientName)
-
-},[patientName,authSuccess])
-
-
-
+  useEffect(() => {
+    setLoading(!patientName);
+  }, [patientName, authSuccess]);
 
   return (
-
-    
     <>
       {/* About */}
-      <section className={`${loading?"blur-sm":""} h-screen mb-10 -mt-24 flex items-center`}>
+      <section
+        className={`${
+          loading ? "blur-sm" : ""
+        } h-screen mb-10 -mt-24 flex items-center`}
+      >
         {/* dashboard-about-screen-bg-image */}
         <img
           src={dashboardBg}
@@ -44,14 +39,12 @@ setLoading(!patientName)
             Hello, {patientName || "Lisa"}! How are you feeling today?
           </p>
           <Button text={"Explore dashboard"} bgColor={"bg-slate-200"} />
-         
         </div>
       </section>
 
       {/* Track */}
-<Wrapper height="h-screen" bgColor="bg-light-purple ">
-
-<div className="translate-y-1/2 max-w-4xl bg-light-purple  flex flex-col items-center gap-y-6  m-auto text-black ">
+      <Wrapper height="h-screen" bgColor="bg-light-purple ">
+        <div className="translate-y-1/2 max-w-4xl bg-light-purple  flex flex-col items-center gap-y-6  m-auto text-black ">
           <h1 className="text-center font-bold text-6xl ">
             Mood Tracker Summary
           </h1>
@@ -66,70 +59,61 @@ setLoading(!patientName)
             textColor={"text-white"}
             to={"/moodtracker"}
           />
-         
         </div>
-      
-
-</Wrapper>
+      </Wrapper>
       {/* Dashboards Cards */}
       <Wrapper height="h-screen">
-      <div className="translate-y-1/2 flex gap-x-5 flex-row">
-          <div className="bg-slate-500 p-10 max-w-xl flex flex-col items-center rounded-2xl gap-y-2 w-fit m-auto text-white h-64">
-            <h1 className="text-center font-semibold text-3xl">
-              Daily Affirmation
-            </h1>
-            <p className="text-center font-normal text-2xl">
-              You are not your thoughts; you are the awareness behind them.
-            </p>
+        <div className="translate-y-1/2 flex items-start justify-center gap-x-5 flex-row">
 
-            <Button
-              text={"Open Now"}
-              to={"/Journal/all-notes"}
-              bgColor={"bg-slate-600"}
-              textColor={"text-white"}
-            />
-          </div>
+          <Card
+            contentHead={"Daily Affirmation"}
+            contentDesc={
+              " You are not your thoughts; you are the awareness behind them."
+            }
+            btnText={"Open Now"}
+            to={"/Journal/all-notes"}
+          />
 
-          <div className="bg-slate-500 p-10 max-w-xl flex flex-col items-center rounded-2xl gap-y-2 w-fit m-auto text-white h-64">
-            <h1 className="text-center font-semibold text-3xl">
-              Open Safety Plan
-            </h1>
-            <p className="text-center font-normal text-2xl">
-              Our Safety Plan tool empowers you to stay prepared and take
-              control when it matters most.
-            </p>
+          
 
-            <Button
-              text={"Open now"}
-              bgColor={"bg-slate-600"}
-              textColor={"text-white"}
-            />
-          </div>
+
+          <Card
+            contentHead={"Open Safety Plan"}
+            contentDesc={"Our Safety Plan too empowers you to stay prepared and take control when it matters most"}
+            btnText={"Open Now"}
+            
+          />
+
+
+
+
+
+
+
+
+
+
         </div>
       </Wrapper>
 
       {/* Journal */}
       <Wrapper height="h-screen" bgColor="bg-slate-400">
-      <div className="translate-y-1/2 max-w-4xl  flex flex-col items-center gap-y-6 w-fit m-auto text-black ">
+        <div className="translate-y-1/2 max-w-4xl  flex flex-col items-center gap-y-6 w-fit m-auto text-black ">
           <h1 className="text-center font-bold text-6xl ">Journal</h1>
           <p className="text-center font-normal text-4xl">
             Journaling helps you process emotions, reflect on your day, and
             track your personal growth over time.
           </p>
           <Button
-          to={"/journal"}
+            to={"/journal"}
             text={"Open now"}
             bgColor={"bg-slate-600"}
             textColor={"text-white"}
           />
         </div>
-    
       </Wrapper>
-    
-      
-{loading && <LoadingAnim/>}
 
-
+      {loading && <LoadingAnim />}
     </>
   );
 }

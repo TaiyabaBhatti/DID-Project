@@ -12,17 +12,7 @@ import Wrapper from '../Common Components/Wrapper';
 
 export default function Workspace() {
 
-// const [isEditorMode,setMode] = useState(true);
 
-// const viewEditor = () =>{
-//   console.log("TextEditor")
-// setMode(true)
-// }
-
-// const viewNotes = () =>{
-// setMode(false);
-//  console.log("View all notes")
-// }
 
   return (
     <>   
@@ -32,21 +22,9 @@ export default function Workspace() {
           className=" absolute object-cover top-0 -z-50 h-24 w-screen bg-no-repeat"
         />
 
-
         <Wrapper>
-        <PastPage path={"/grounding-tool-library"}/>
-
+        <PastPage path={"/journal"}/>
 <section className='mb-10  relative '>
-
- {/* Toggle buttons */}
-            {/* <div className='flex flex-row gap-x-2'>
-               <Button text={"Text Editor"} onclick={viewEditor} />
-               <Button text={"View All Notes"} onclick={viewNotes} />
-            </div> */}
-
-
-{/* {isEditorMode? <TextEditor/>:<AllNotes/>} */}
-
 <TextEditor/>
 </section>
 

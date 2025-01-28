@@ -14,6 +14,7 @@ export default {
 'light-purple':'#CBCBE7',
 'greyish-purple':'#595880',
 
+
       },
 
       backgroundColor:{

@@ -8,13 +8,15 @@ import SignInForm from '../First-Interface/SignInForm'
 import MoodTracker from '../Mood Tracker/MoodTracker'
 import GuidedBreathing from '../GroundingTools/GuidedBreathing'
 import SoothingPlaylists from '../GroundingTools/SoothingPlaylists'
-import PatientProfile from '../Profile/PatientProfile'
+
 import SensoryExercises from '../GroundingTools/SensoryExercises'
 import Workspace from '../Journalling/Workspace'
 import ProtectedRoute from './ProtectedRoute'
 import AccountPage from '../First-Interface/AccountPage'
 import SupportPage from '../Support/SupportPage'
 import AllNotes from '../Journalling/AllNotes'
+import AllAlters from '../Alters/AllAlters'
+import EditProfile from '../Profile/EditProfile'
 
 
 
@@ -39,7 +41,8 @@ export default function AppRoutePages() {
   <Route path="/grounding-tool-library/guided-breathing" element={<ProtectedRoute><GuidedBreathing/></ProtectedRoute>}/>
   <Route path="/grounding-tool-library/sensory-exercise" element={<ProtectedRoute><SensoryExercises/></ProtectedRoute>}/>
   <Route path="/grounding-tool-library/soothing-playlists" element={<ProtectedRoute><SoothingPlaylists/></ProtectedRoute>}/>
-  <Route path="/profile" element={<ProtectedRoute><PatientProfile/></ProtectedRoute>}/>
+  <Route path="/profile" element={<ProtectedRoute><EditProfile/></ProtectedRoute>}/>
+  <Route path="/system-profiles" element={<ProtectedRoute><AllAlters/></ProtectedRoute>}/>
   </Routes>
   )
 }

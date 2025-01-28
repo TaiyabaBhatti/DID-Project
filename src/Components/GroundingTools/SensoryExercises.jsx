@@ -3,13 +3,15 @@ import journalHeaderBg from "../../assets/images/journalHeaderBg.png";
 import Button from '../Common Components/Button';
 import Lottie from "lottie-react"
 import NumberBackwards from "../../assets/animations/sensoryExe1.json"
+import Timer from './Timer';
 
 
 export default function SensoryExercises() {
 
 const [isActive, setIsActive] = useState(false);
 const [btnText,setBtnText] = useState("Play");
-  let lottieRef  = useRef(null);
+
+let lottieRef  = useRef(null);
 
 useEffect(()=>{
 
@@ -23,12 +25,14 @@ useEffect(()=>{
 const actionPlayed = () =>{
 if(isActive){
   setBtnText("Pause")
+ 
   setIsActive(false);
   lottieRef.current.pause();
 }
 else {
 
   setBtnText("Play")
+  
 setIsActive(true);
 lottieRef.current.play();
 
@@ -59,7 +63,7 @@ lottieRef.current.play();
 {/* Exercise Description */}
 
 
-<p className='text-center font-semibold  text-4xl'>Senses Exercise</p>
+<p className='text-center font-semibold   text-4xl'>Senses Exercise</p>
 
 {/* Exercise */}
 
@@ -70,7 +74,7 @@ lottieRef.current.play();
 
 
 {/* start stop button */}
-<Button text={btnText} onclick={actionPlayed} font='text-2xl' bold='font-semibold'/>
+<Button text={btnText} bgColor={"bg-light-purple"} onclick={actionPlayed} font='text-2xl' bold='font-semibold'/>
 
 
 </section>

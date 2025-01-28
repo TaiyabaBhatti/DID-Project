@@ -10,6 +10,7 @@ import {
   } from "firebase/auth";
   import { getFirestore, addDoc,collection,getDoc,doc, getDocs, setDoc } from "firebase/firestore";
 import LoadingAnim from '../Common Components/LoadingAnim';
+import PatientProfile from '../Common Components/PatientProfile';
   
 
 const db = getFirestore(app);
@@ -104,7 +105,7 @@ await reauthenticateWithCredential(currUser, credentials);
         
         const profileDocRef = doc(db, "Users", currUser.uid, "profile", profileDocId || "");
         await setDoc(profileDocRef, updatedProfileData, { merge: true });
-        navigate("/moodtracker");
+        navigate("/dashboard");
        
       } catch (error) {
         console.error("Failed to update profile:", error.message);
@@ -127,6 +128,8 @@ await reauthenticateWithCredential(currUser, credentials);
 
 
 <>
+
+<PatientProfile>
 
 <div className='relative'>
 
@@ -219,7 +222,7 @@ await reauthenticateWithCredential(currUser, credentials);
 
 </div>
 
-
+</PatientProfile>
 </>
 
    

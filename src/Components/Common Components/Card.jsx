@@ -1,14 +1,26 @@
-import React from 'react'
-import Button from './Button'
+import React from "react";
+import Button from "./Button";
 
-export default function Card({btnText, btnBgColor, btnTextColor,contentHead="xyz",contentDesc, to=null}) {
+export default function Card({
+  btnText,
+  btnBgColor="bg-white",
+  btnTextColor="text-black",
+  contentHead,
+  contentDesc,
+  to = null,
+  background="bg-greyish-purple "
 
+}) {
   return (
-    <div className='bg-[#595880] h-56 p-10 w-[426px] flex flex-col items-center rounded-2xl gap-y-2  text-white justify-center'>
-{/* <h1 className='text-center font-semibold text-3xl'>{contentHead}</h1> */}
-<p className='text-center font-normal text-2xl'>{contentDesc}</p>
-<Button text={btnText} bgColor={btnBgColor} textColor={btnTextColor} to={to} />
-</div>
-
-  )
+    <div className={`h-64 p-10 w-[510px]  flex flex-col items-center rounded-2xl gap-y-2  text-white justify-center ${background} opacity-80`} >
+      <h1 className='text-center font-semibold text-3xl'>{contentHead}</h1>
+      <p className="text-center font-normal text-2xl">{contentDesc}</p>
+      <Button
+        text={btnText}
+        bgColor={btnBgColor}
+        textColor={btnTextColor}
+        to={to}
+      />
+    </div>
+  );
 }
