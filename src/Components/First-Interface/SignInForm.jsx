@@ -104,6 +104,9 @@ export default function SignInForm({ accountPage }) {
           message: "An unexpected error occurred. Please try again.",
         });
       }
+
+setLoading(false)
+
     }
   };
 

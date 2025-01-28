@@ -30,7 +30,7 @@ export default function LoginForm({accountPage}) {
   useEffect(() => {
 
     if (authSuccess) {
-    
+      console.log("Already Logged in");
       NotificationPopup("Successfully Logged In", "success");
         navigate("/dashboard");
      

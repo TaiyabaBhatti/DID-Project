@@ -69,8 +69,9 @@ const editProfile = async(data)=>{
 setLoading(true);
 
 try { 
-
- const status = await validatePassword(getAuth(), data.password);
+  const auth = getAuth();
+  const status = await validatePassword(auth, data.password);
+ 
 console.log(status.data)
 
 if(!status.isValid){
