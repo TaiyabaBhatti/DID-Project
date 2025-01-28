@@ -5,7 +5,8 @@ import app from "../../Configuration/firebase-config";
 import AuthContext from "../context/authContext";
 import { Link, useNavigate } from 'react-router-dom';
 import {
-    getAuth, validatePassword 
+  EmailAuthProvider,
+    getAuth, reauthenticateWithCredential,
   } from "firebase/auth";
   import { getFirestore, addDoc,collection,getDoc,doc, getDocs, setDoc } from "firebase/firestore";
 import LoadingAnim from '../Common Components/LoadingAnim';
@@ -51,6 +52,13 @@ try{
 catch(err){
 console.log("Error",err)
 
+
+
+
+
+
+
+
 }
   }
 
@@ -69,20 +77,25 @@ const editProfile = async(data)=>{
 setLoading(true);
 
 try { 
-  const auth = getAuth();
-  const status = await validatePassword(auth, data.password);
+  // const auth = getAuth();
+  // const status = await validatePassword(auth, data.password);
  
-console.log(status.data)
 
-if(!status.isValid){
-  setError("password",{type:"manual",message:"Password not matched"})
-  console.log("Not valid password")
+if(!currUser){
+  // setError("password",{type:"manual",message:"Password not matched"})
+  // console.log("Not valid password")
+  // setLoading(false);
+  // return;
+  setError("password", { type: "manual", message: "No user is logged in" });
   setLoading(false);
   return;
  
 }
 
-        
+// having user credentials
+const credentials = EmailAuthProvider.credential(currUser.email,data.password);
+await reauthenticateWithCredential(currUser, credentials);        
+
       const updatedProfileData = {
             name: data.name || profileData?.[0]?.name, // Preserve old value if not updated
             username: data.username || profileData?.[0]?.username, 
@@ -95,6 +108,14 @@ if(!status.isValid){
        
       } catch (error) {
         console.error("Failed to update profile:", error.message);
+        
+        if (error.code === "auth/invalid-credential") {
+          console.error(error.code);
+          setError("password", {
+            type: "manual",
+            message: "Incorrect password.",
+          });
+        }
       }
       finally {
         setLoading(false);
