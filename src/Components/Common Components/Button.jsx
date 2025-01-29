@@ -10,14 +10,15 @@ export default function Button({
   onclick = null,
   disabled = false,
   bold="",
-  font=""
+  font="",
+  classname=""
 }) {
   return (
     <button
       disabled={disabled}
       onClick={onclick}
       type={type}
-      className={`${textColor} rounded-xl ${bgColor} ${
+      className={`${textColor}  rounded-xl ${bgColor} ${
         disabled ? "cursor-not-allowed" : "cursor-pointer"
       }  font-semibold text-center text-lg px-3 py-2`}
     >

@@ -63,7 +63,7 @@ lottieRef.current.play();
 {/* Exercise Description */}
 
 
-<p className='text-center font-semibold   text-4xl'>Senses Exercise</p>
+<p className='text-center font-semibold   text-4xl'>Sensory Exercise</p>
 
 {/* Exercise */}
 

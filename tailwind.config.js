@@ -15,13 +15,14 @@ export default {
 'greyish-purple':'#595880',
 
 
+
       },
 
       backgroundColor:{
 
         'light-purple':'#CBCBE7',
         'greyish-purple':'#595880',
-        
+        'dark-purple':'#5F4396'
               }
     },
   },

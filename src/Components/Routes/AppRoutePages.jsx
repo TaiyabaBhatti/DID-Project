@@ -17,6 +17,7 @@ import SupportPage from '../Support/SupportPage'
 import AllNotes from '../Journalling/AllNotes'
 import AllAlters from '../Alters/AllAlters'
 import EditProfile from '../Profile/EditProfile'
+import CreateAlter from '../Alters/CreateAlter'
 
 
 
@@ -43,6 +44,7 @@ export default function AppRoutePages() {
   <Route path="/grounding-tool-library/soothing-playlists" element={<ProtectedRoute><SoothingPlaylists/></ProtectedRoute>}/>
   <Route path="/profile" element={<ProtectedRoute><EditProfile/></ProtectedRoute>}/>
   <Route path="/system-profiles" element={<ProtectedRoute><AllAlters/></ProtectedRoute>}/>
+  <Route path="/system-profiles/add-alter" element={<ProtectedRoute><CreateAlter/></ProtectedRoute>}/>
   </Routes>
   )
 }

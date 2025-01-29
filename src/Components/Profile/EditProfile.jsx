@@ -129,7 +129,7 @@ await reauthenticateWithCredential(currUser, credentials);
 
 <>
 
-<PatientProfile>
+<PatientProfile path='/dashboard'>
 
 <div className='relative'>
 

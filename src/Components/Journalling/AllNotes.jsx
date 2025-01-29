@@ -23,9 +23,9 @@ import { useParams } from "react-router-dom";
 const db = getFirestore(app);
 
 export default function AllNotes() {
+
   const [isNoteOpen, setIsNoteOpen] = useState(false);
   const [selectedNote, setSelectedNote] = useState(null);
-
   const { currUser, patientName } = useContext(AuthContext);
   const [journalData, setJournalData] = useState(null);
   const [loading, setLoading] = useState(false);

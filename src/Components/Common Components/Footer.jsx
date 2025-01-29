@@ -9,14 +9,13 @@ export default function Footer() {
         <div className="max-w-80">
           <h1 className="mb-5 font-bold text-xl">D.I.D Site</h1>
           <p className="font-normal text-base">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Providing essential tools and resources for DID caretakers
           </p>
         </div>
         <div>
             <h1 className="font-bold text-xl underline mb-5">Links</h1>
         <ul>
-          <li className="text-base font-normal"><Link to="">System Profile</Link></li>
+          <li className="text-base font-normal"><Link to="/system-profiles">System Profile</Link></li>
           <li className="text-base font-normal"><Link to={"/moodtracker"}>Mood Tracker</Link></li>
           <li className="text-base font-normal"><Link to={"/journal"}>Journal</Link></li>
           <li className="text-base font-normal"><Link to={"/support"}>Support</Link></li>
@@ -24,7 +23,7 @@ export default function Footer() {
         </div>
       </div>
 <div className=" bg-[#595880]  p-10">
-<h1 className="text-center text-xl font-normal">© 2023 D.I.D Site All Rights Reserved.</h1>
+<h1 className="text-center text-xl font-normal">© 2023 Balance Beacon Site All Rights Reserved.</h1>
 </div>
 
     </footer>

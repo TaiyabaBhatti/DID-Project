@@ -1,7 +1,7 @@
 import React,{useEffect, useRef, useState} from 'react'
 import Button from '../Common Components/Button';
 import Lottie from "lottie-react"
-import BreathExercise from "../../assets/animations/breathingExe1.json"
+import BreathExercise from "../../assets/animations/breathing.json"
 import PastPage from '../Common Components/PastPage';
 import Timer from './Timer';
 

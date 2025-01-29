@@ -48,7 +48,7 @@ export default function Hamburger({ toggleMenu, loggedOut,state }) {
           </li>
           <li className="flex flex-row items-center gap-x-3">
             <FaUsers />
-            <Link to="">System Profiles</Link>
+            <Link to="/system-profiles">System Profiles</Link>
           </li>
           <li className="flex flex-row items-center gap-x-3">
             <FaRegUser />

@@ -52,7 +52,7 @@ const toggleMenu = () =>{
    <nav className='relative z-10 px-12 py-9 flex flex-row justify-between items-center  h-24'>
     <div id='left-logo'>
         <h1 className='font-bold text-3xl text-light-purple'>
-D.I.D Site
+Balance Beacon
         </h1>
     </div>
 

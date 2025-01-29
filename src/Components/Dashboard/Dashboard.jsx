@@ -66,7 +66,7 @@ export default function Dashboard() {
         <div className="translate-y-1/2 flex items-start justify-center gap-x-5 flex-row">
 
           <Card
-            contentHead={"Daily Affirmation"}
+            contentHead={"User Notes"}
             contentDesc={
               " You are not your thoughts; you are the awareness behind them."
             }
