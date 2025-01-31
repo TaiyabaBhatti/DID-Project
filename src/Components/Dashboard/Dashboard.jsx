@@ -44,7 +44,7 @@ export default function Dashboard() {
       {/* Track */}
 
 <section id="explore-dashboard">
-      <Wrapper properties={"h-screen bg-light-purple flex items-center"}>
+      <Wrapper properties={"min-h-screen bg-light-purple flex items-center"}>
         <Content contentProperties={"text-black"}>
           <h1 className="text-center font-bold text-6xl ">
             Mood Tracker Summary
@@ -88,7 +88,7 @@ export default function Dashboard() {
       </Wrapper>
 
       {/* Journal */}
-      <Wrapper properties={"h-screen bg-light-purple flex items-center"}>
+      <Wrapper properties={"min-h-screen bg-light-purple flex items-center"}>
         <Content contentProperties={"text-black"}>
           <h1 className="text-center font-bold text-6xl ">Journal</h1>
           <p className="text-center font-normal text-4xl ">

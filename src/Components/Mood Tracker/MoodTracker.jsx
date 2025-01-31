@@ -1,5 +1,5 @@
 import React,{useContext, useEffect, useState} from 'react'
-import dashboardBg from "../../assets/images/background.png";
+
 import moodTrackerAbout from "../../assets/images/moodtracker-about.png";
 import Button from "../Common Components/Button";
 import MoodTrackerForm from './MoodTrackerForm';
@@ -8,8 +8,8 @@ import DailyEmotionTrigger from '../VizualRepresentation/DailyEmotionTrigger';
 import AuthContext from "../context/authContext";
 import { collection, query,getFirestore, getDocs, doc } from 'firebase/firestore';
 import app from '../../Configuration/firebase-config';
-import { NotificationPopup } from '../Noifications/NotificationPopup';
-import LoadingAnim from '../Common Components/LoadingAnim';
+
+
 import Wrapper from '../Common Components/Wrapper';
 
 

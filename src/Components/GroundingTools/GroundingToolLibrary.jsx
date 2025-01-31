@@ -1,8 +1,8 @@
 import React from "react";
-import journalHeaderBg from "../../assets/images/journalHeaderBg.png";
+
 import supportBg from "../../assets/images/supportImage.jpg";
 import Button from "../Common Components/Button";
-import Card from "../Common Components/Card";
+
 import Wrapper from "../Common Components/Wrapper";
 import GuidedBreathing from "./GuidedBreathing";
 import SensoryExercises from "./SensoryExercises";

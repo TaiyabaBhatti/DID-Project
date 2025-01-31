@@ -1,15 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
-import background from "../../assets/images/background.png";
+
 import PatientProfile from "../Common Components/PatientProfile";
-import Wrapper from "../Common Components/Wrapper";
-import { FaUserLarge } from "react-icons/fa6";
+
 import Button from "../Common Components/Button";
 import app from "../../Configuration/firebase-config";
 import { collection, getDocs, getFirestore, query } from "firebase/firestore";
 import LoadingAnim from "../Common Components/LoadingAnim";
 import AuthContext from "../context/authContext";
 import { NotificationPopup } from "../Noifications/NotificationPopup";
-import PastPage from "../Common Components/PastPage";
+
 import { FcPodiumWithSpeaker } from "react-icons/fc";
 
 const db = getFirestore(app);

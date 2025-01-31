@@ -3,11 +3,10 @@ import { Route, Routes, BrowserRouter as Router, Navigate } from 'react-router-d
 import Dashboard from '../Dashboard/Dashboard'
 import Journal from '../Journalling/Journal'
 import GroundingToolLibrary from '../GroundingTools/GroundingToolLibrary'
-import LoginForm from '../First-Interface/LoginForm'
-import SignInForm from '../First-Interface/SignInForm'
+
 import MoodTracker from '../Mood Tracker/MoodTracker'
 import GuidedBreathing from '../GroundingTools/GuidedBreathing'
-import SoothingPlaylists from '../GroundingTools/SoothingPlaylists'
+
 
 import SensoryExercises from '../GroundingTools/SensoryExercises'
 import Workspace from '../Journalling/Workspace'
@@ -43,7 +42,6 @@ export default function AppRoutePages() {
   <Route path="/grounding-tool-library" element={<ProtectedRoute><GroundingToolLibrary/></ProtectedRoute>}/>
   <Route path="/grounding-tool-library/guided-breathing" element={<ProtectedRoute><GuidedBreathing/></ProtectedRoute>}/>
   <Route path="/grounding-tool-library/sensory-exercise" element={<ProtectedRoute><SensoryExercises/></ProtectedRoute>}/>
-  <Route path="/grounding-tool-library/soothing-playlists" element={<ProtectedRoute><SoothingPlaylists/></ProtectedRoute>}/>
   <Route path="/profile" element={<ProtectedRoute><EditProfile/></ProtectedRoute>}/>
   <Route path="/system-profiles" element={<ProtectedRoute><AllAlters/></ProtectedRoute>}/>
   <Route path="/system-profiles/add-alter" element={<ProtectedRoute><CreateAlter/></ProtectedRoute>}/>

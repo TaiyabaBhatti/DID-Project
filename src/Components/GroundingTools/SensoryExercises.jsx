@@ -1,9 +1,5 @@
 import React,{useEffect, useRef,useState} from 'react'
-import journalHeaderBg from "../../assets/images/journalHeaderBg.png";
-import Button from '../Common Components/Button';
-import Lottie from "lottie-react"
-import NumberBackwards from "../../assets/animations/sensoryExe1.json"
-import Timer from './Timer';
+
 
 import SensoryExercise2 from "../../assets/images/sensoryExe2.png"
 

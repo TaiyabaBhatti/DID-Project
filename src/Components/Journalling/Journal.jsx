@@ -1,12 +1,10 @@
 import React from "react";
 
-import Header from "../Common Components/Header";
+
 import journalBg from "../../assets/images/JournalBg.jpg";
-import journalCornerBg from "../../assets/images/journalCornerBg.png";
-import Card from "../Common Components/Card";
+
 import Button from "../Common Components/Button";
-import { Outlet } from "react-router-dom";
-import Footer from "../Common Components/Footer";
+
 import Wrapper from "../Common Components/Wrapper";
 import allNotes from "../../assets/animations/allnotes.json";
 import editor from "../../assets/animations/texteditor.json";
