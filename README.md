@@ -5,7 +5,7 @@ A web application built with *React* and *Firebase* to create awareness and prov
 ---
 
 ## Screenshots
-![Mockup](https://github.com/TaiyabaBhatti/DID-Project/blob/main/src/assets/attachments/Mockup.png)
+![Mockup](https://github.com/TaiyabaBhatti/DID-Project/blob/main/src/assets/attachments/Mockup-preview.png)
 
 
 
