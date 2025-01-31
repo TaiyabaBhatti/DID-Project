@@ -44,7 +44,7 @@ try{
 
   if(response){
     console.log(response)
-    navigate("/moodtracker");
+    navigate("/dashboard");
     
   }
 
@@ -139,7 +139,7 @@ console.log("Error",err)
       </div>
 
 
-        <Button text={"Save Data"} type={"submit"} />
+        <Button text={"Save Data"} type={"submit"} properties={"bg-white text-black"}/>
       </form>
     </div>
   );

@@ -22,8 +22,15 @@ export default {
 
         'light-purple':'#CBCBE7',
         'greyish-purple':'#595880',
-        'dark-purple':'#5F4396'
-              }
+        'dark-purple':'#5F4396',
+        'note-color-green':'#ACBD6F'
+              },
+              screens: {
+                'lmd': '925px',   // 920px for dashboard cards
+                'xl2': '1440px', // Custom extra-large screen
+               'xmd': '940px', 
+                'max-lmd':'920px'
+              },
     },
   },
   plugins: [],

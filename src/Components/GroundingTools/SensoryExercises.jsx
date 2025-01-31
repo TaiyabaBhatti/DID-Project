@@ -5,6 +5,7 @@ import Lottie from "lottie-react"
 import NumberBackwards from "../../assets/animations/sensoryExe1.json"
 import Timer from './Timer';
 
+import SensoryExercise2 from "../../assets/images/sensoryExe2.png"
 
 export default function SensoryExercises() {
 
@@ -15,7 +16,7 @@ let lottieRef  = useRef(null);
 
 useEffect(()=>{
 
-  lottieRef.current.pause();
+  // lottieRef.current.pause();
 
 
 
@@ -58,23 +59,19 @@ lottieRef.current.play();
     <>
       
 
-    <section className=' flex flex-col items-center gap-y-2 justify-center relative '>
+    <section className=' flex flex-col items-center gap-y-10 justify-center relative '>
 
 {/* Exercise Description */}
 
 
-<p className='text-center font-semibold   text-4xl'>Sensory Exercise</p>
+<p className='text-center font-semibold text-4xl'>Sensory Exercise</p>
 
 {/* Exercise */}
 
-<Lottie animationData={NumberBackwards}
-            loop
-            lottieRef={lottieRef}
-            style={{ height: "300px", width: "300px" }}/>
-
+<img src={SensoryExercise2} alt="" className='object-cover w-72'/>
+<p className='text-center font-normal text-2xl'>Name all the Colors you can see above</p>
 
 {/* start stop button */}
-<Button text={btnText} bgColor={"bg-light-purple"} onclick={actionPlayed} font='text-2xl' bold='font-semibold'/>
 
 
 </section>

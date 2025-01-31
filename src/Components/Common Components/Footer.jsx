@@ -22,7 +22,7 @@ export default function Footer() {
         </ul>
         </div>
       </div>
-<div className=" bg-[#595880]  p-10">
+<div className=" bg-greyish-purple  p-10">
 <h1 className="text-center text-xl font-normal">© 2023 Balance Beacon Site All Rights Reserved.</h1>
 </div>
 

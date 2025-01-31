@@ -172,12 +172,12 @@ setLoading(false)
 
 
 
-          <Button text={"Login"} type={"submit"} />
+          <Button text={"Login"} type={"submit"} properties={"bg-light-purple text-greyish-purple"}/>
         </form>
-        <span className="text-white text-right  font-medium text-sm ">
+        <span className="text-white text-right   font-medium text-sm ">
             Don't have an account?{" "}
            <button className="font-bold" onClick={accountPage}> Sign Up</button>
-           
+        
           </span>
           </div>
 

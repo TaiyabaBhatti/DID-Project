@@ -6,16 +6,19 @@ import rehypeRaw from "rehype-raw";
 
 export default function Notes({contentHead="",contentDesc=""}) {
 
-const contentTrimed = contentDesc.substring(0,60);
+
+
+const contentTrimed = contentDesc.substring(0,130);
   return (
-    <div className='bg-[#595880] p-5 w-80 max-w-80 h-44 flex flex-col justify-center items-center rounded-2xl gap-y-2 text-white '>
-<h1 className='text-center font-semibold text-xl'>{contentHead}</h1>
+    <div className='bg-note-color-green hover:scale-105 transition-all duration-150 text-center  p-5 w-80 max-w-80 h-44 flex flex-col justify-center items-center rounded-xl gap-y-2 text-white '>
+<h1 className='font-semibold text-xl'>{contentHead}</h1>
 <ReactMarkdown 
  remarkPlugins={[remarkGfm]}
  rehypePlugins={[rehypeRaw]}
 >
   {contentTrimed}
 </ReactMarkdown>
+
 </div>
 
   )

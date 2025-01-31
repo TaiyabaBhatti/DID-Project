@@ -8,6 +8,7 @@ import Footer from "../Common Components/Footer";
 import Wrapper from "../Common Components/Wrapper";
 import AuthContext from "../context/authContext";
 import LoadingAnim from "../Common Components/LoadingAnim";
+import Content from "../Common Components/Content";
 export default function Dashboard() {
   const { patientName, authSuccess } = useContext(AuthContext);
   const [loading, setLoading] = useState(true);
@@ -22,29 +23,32 @@ export default function Dashboard() {
       <section
         className={`${
           loading ? "blur-sm" : ""
-        } h-screen mb-10 -mt-24 flex items-center`}
+        } h-screen mb-10 -mt-24 flex items-center px-10`}
       >
         {/* dashboard-about-screen-bg-image */}
         <img
           src={dashboardBg}
           alt=""
-          className="h-screen absolute top-0 -z-50 w-screen bg-no-repeat object-cover"
+          className="h-screen absolute top-0 -z-50 w-screen bg-no-repeat object-cover left-0"
         />
-        <div
-          id="dashboard-about-heading"
-          className="max-w-4xl px-10 flex flex-col items-center gap-y-6  m-auto text-white"
-        >
+
+        <Content contentProperties={"text-white"}>
           <h1 className="text-center font-bold text-6xl ">Dashboard</h1>
           <p className="text-center font-normal text-4xl">
             Hello, {patientName || "Lisa"}! How are you feeling today?
           </p>
-          <Button text={"Explore dashboard"} bgColor={"bg-slate-200"} />
-        </div>
+          <Button text={"Explore dashboard"}
+           properties={"text-black bg-white"}
+           href="#explore-dashboard"
+           />
+        </Content>
       </section>
 
       {/* Track */}
-      <Wrapper height="h-screen" bgColor="bg-light-purple ">
-        <div className="translate-y-1/2 max-w-4xl bg-light-purple  flex flex-col items-center gap-y-6  m-auto text-black ">
+
+<section id="explore-dashboard">
+      <Wrapper properties={"h-screen bg-light-purple flex items-center"}>
+        <Content contentProperties={"text-black"}>
           <h1 className="text-center font-bold text-6xl ">
             Mood Tracker Summary
           </h1>
@@ -55,16 +59,17 @@ export default function Dashboard() {
           </p>
           <Button
             text={"Update now"}
-            bgColor={"bg-slate-600"}
+            bgColor={"bg-greyish-purple"}
             textColor={"text-white"}
             to={"/moodtracker"}
+            properties={"text-white bg-greyish-purple"}
           />
-        </div>
+        </Content>
       </Wrapper>
-      {/* Dashboards Cards */}
-      <Wrapper height="h-screen">
-        <div className="translate-y-1/2 flex items-start justify-center gap-x-5 flex-row">
 
+      {/* Dashboards Cards */}
+      <Wrapper properties={"h-screen flex items-center"}>
+        <div className="lmd:flex-row m-auto  flex justify-center gap-5 flex-col">
           <Card
             contentHead={"User Notes"}
             contentDesc={
@@ -74,45 +79,34 @@ export default function Dashboard() {
             to={"/Journal/all-notes"}
           />
 
-          
-
-
           <Card
-            contentHead={"Open Safety Plan"}
-            contentDesc={"Our Safety Plan too empowers you to stay prepared and take control when it matters most"}
+            contentHead={"Help Seek"}
+            contentDesc={
+              "Empowers you to stay prepared and take control when it matters most"
+            }
             btnText={"Open Now"}
-            
+            to="/support/help-page"
           />
-
-
-
-
-
-
-
-
-
-
         </div>
       </Wrapper>
 
       {/* Journal */}
-      <Wrapper height="h-screen" bgColor="bg-slate-400">
-        <div className="translate-y-1/2 max-w-4xl  flex flex-col items-center gap-y-6 w-fit m-auto text-black ">
+      <Wrapper properties={"h-screen bg-light-purple flex items-center"}>
+        <Content contentProperties={"text-black"}>
           <h1 className="text-center font-bold text-6xl ">Journal</h1>
-          <p className="text-center font-normal text-4xl">
+          <p className="text-center font-normal text-4xl ">
             Journaling helps you process emotions, reflect on your day, and
             track your personal growth over time.
           </p>
           <Button
             to={"/journal"}
             text={"Open now"}
-            bgColor={"bg-slate-600"}
-            textColor={"text-white"}
+        
+            properties={"text-white bg-greyish-purple"}
           />
-        </div>
+        </Content>
       </Wrapper>
-
+      </section>
       {loading && <LoadingAnim />}
     </>
   );

@@ -27,13 +27,10 @@ export default function EditProfile() {
     getValues,
     formState: { errors },
     setError
-  } = useForm({defaultValues:{
-name:"",
-username:""
-  }});
+  } = useForm();
 
 
-console.log(getAuth())
+console.log(profileData)
 
  useEffect(()=>{
 
@@ -43,11 +40,11 @@ const fetchExistedData = async () => {
 try{
    const profileDocRef = doc(db, "Users", currUser.uid, "profile", profileDocId || "")
    const docSnap = await getDoc(profileDocRef);
-  if(docSnap.exists()){  
-   const {username} = docSnap.data();
-   console.log(username)
-   setValue("username",username)
-  }
+  // if(docSnap.exists()){  
+  //  const {username} = docSnap.data();
+  //  console.log(username)
+  //  setValue("username",username)
+  // }
 
 }
 catch(err){
@@ -78,19 +75,13 @@ const editProfile = async(data)=>{
 setLoading(true);
 
 try { 
-  // const auth = getAuth();
-  // const status = await validatePassword(auth, data.password);
  
-
+ 
 if(!currUser){
-  // setError("password",{type:"manual",message:"Password not matched"})
-  // console.log("Not valid password")
-  // setLoading(false);
-  // return;
+ 
   setError("password", { type: "manual", message: "No user is logged in" });
   setLoading(false);
   return;
- 
 }
 
 // having user credentials
@@ -99,8 +90,8 @@ await reauthenticateWithCredential(currUser, credentials);
 
       const updatedProfileData = {
             name: data.name || profileData?.[0]?.name, // Preserve old value if not updated
-            username: data.username || profileData?.[0]?.username, 
-           
+            gender: data.gender || profileData?.[0]?.gender, 
+            age:data.age || profileData?.[0]?.age
           };
         
         const profileDocRef = doc(db, "Users", currUser.uid, "profile", profileDocId || "");
@@ -141,9 +132,11 @@ await reauthenticateWithCredential(currUser, credentials);
    })}>
 
 
+
+
 <div className="flex flex-col gap-y-1 ">
   <label htmlFor="name" className="font-medium text-xl text-white">
-   Name
+   Name:
   </label>
   <input
     // aria-invalid={errors.name ? "true" : "false"}
@@ -154,32 +147,66 @@ await reauthenticateWithCredential(currUser, credentials);
     id="name"
     className="rounded-2xl px-5 py-3 outline-none"
   />
-  {/* {errors.name?.type === "required" && (
-    <p role="alert" className="text-red-500 text-xs">
-      {errors.name.message}
-    </p>
-  )} */}
 </div>
 
 <div className="flex flex-col gap-y-1 ">
-  <label htmlFor="username" className="font-medium text-xl text-white">
-   Username
+<label htmlFor="name" className="font-medium text-xl text-white">
+   Gender:
+  </label>
+
+
+  <div className="flex gap-x-4 rounded-2xl px-5 text-greyish-purple py-3 bg-light-purple">
+  <label className="flex items-center gap-x-2 ">
+      <input
+        {...register("gender", { required: "Gender is required" })}
+        type="radio"
+        value="male"
+       
+        className="accent-blue-500"
+      />
+      Male
+    </label>
+    <label className="flex items-center gap-x-2 ">
+      <input
+        {...register("gender", { required: "Gender is required" })}
+        type="radio"
+        value="female"
+        className="accent-blue-500"
+      />
+      Female
+    </label>
+    <label className="flex items-center gap-x-2 ">
+      <input
+        {...register("gender", { required: "Gender is required" })}
+        type="radio"
+        value="other"
+        className="accent-blue-500"
+      />
+      Preferred not to say
+    </label>
+  </div>
+
+  
+
+
+
+
+</div>
+
+<div className="flex flex-col gap-y-1 ">
+  <label htmlFor="age" className="font-medium text-xl text-white">
+   Age:
   </label>
   <input
-    // aria-invalid={errors.username ? "true" : "false"}
-    {...register("username")}
+    {...register("age")}
     type="text"
-    autoComplete="username"
-    placeholder="username"
-    id="username"
+    autoComplete="age"
+    placeholder={profileData?.[0]?.age || "23"}
+    id="age"
     className="rounded-2xl px-5 py-3 outline-none"
   />
-  {/* {errors.username?.type === "required" && (
-    <p role="alert" className="text-red-500 text-xs">
-      {errors.username.message}
-    </p>
-  )} */}
 </div>
+
 
 
 <div className="flex flex-col gap-y-1 ">
@@ -215,7 +242,7 @@ await reauthenticateWithCredential(currUser, credentials);
 </span>
 
 
-  <Button text={"Save Changes"} type={"submit"} bgColor={"bg-[#CBCBE7]"} textColor={"text-[#595880]"}/>
+  <Button text={"Save Changes"} type={"submit"}  properties={"bg-light-purple text-greyish-purple"}  />
     </form>
     </div>
 {loading && <LoadingAnim/>}

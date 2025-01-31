@@ -79,10 +79,10 @@ export default function AllNotes() {
       <img
         src={journalHeaderBg}
         alt=""
-        className=" absolute object-cover top-0 -z-50 h-24 w-screen bg-no-repeat"
+        className=" absolute  object-cover top-0 -z-50 h-24 w-screen bg-no-repeat"
       />
-      <section className="relative">
-        <Wrapper blur={isNoteOpen ? "blur-sm" : ""}>
+      <section className="relative min-h-screen">
+        <Wrapper properties={isNoteOpen ? "blur-2xl" : ""}>
           <PastPage path={"/journal"} />
           <section
             className={`relative items-center  justify-center flex gap-3 flex-wrap`}

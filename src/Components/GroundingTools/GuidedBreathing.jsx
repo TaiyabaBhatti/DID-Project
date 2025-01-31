@@ -47,7 +47,7 @@ lottieRef.current.play();
     
 
   {/* <PastPage path={"/grounding-tool-library"}/> */}
- <section className='flex flex-col items-center gap-y-2 justify-center  relative '>
+ <section className='flex flex-col items-center gap-y-7 justify-center  relative '>
 
 {/* Exercise Description */}
 <p className='text-center font-semibold  text-4xl'>Breathing Exercise</p>
@@ -62,7 +62,7 @@ lottieRef.current.play();
 <Timer active={timerState}/>
 
 {/* start stop button */}
-<Button text={btnText} onclick={actionPlayed} font='text-2xl' bold='font-semibold'  />
+<Button text={btnText} onclick={actionPlayed} properties={"font-semibold text-2xl bg-white text-black min-w-32"}/>
 
 
 </section>

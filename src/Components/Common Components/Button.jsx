@@ -3,26 +3,27 @@ import { Link } from "react-router-dom";
 
 export default function Button({
   text,
-  bgColor = "bg-white",
-  textColor = "text-black",
   type = "button",
   to = null,
+  href,
   onclick = null,
   disabled = false,
-  bold="",
-  font="",
-  classname=""
+  properties
 }) {
   return (
     <button
       disabled={disabled}
       onClick={onclick}
       type={type}
-      className={`${textColor}  rounded-xl ${bgColor} ${
+      className={` rounded-xl ${
         disabled ? "cursor-not-allowed" : "cursor-pointer"
-      }  font-semibold text-center text-lg px-3 py-2`}
+      }  font-semibold text-center   hover:scale-105 transition-all duration-150 text-lg px-3 py-2  ${properties}`}
     >
-      {to ? <Link to={to}>{text}</Link> : `${text}`}
+      {href && <a href={href}>{text}</a>}
+      {to && <Link to={to}>{text}</Link>}
+      {(!href && !to) && `${text}`}
+
+
     </button>
   );
 }

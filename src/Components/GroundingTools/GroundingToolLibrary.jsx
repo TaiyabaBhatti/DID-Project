@@ -1,6 +1,6 @@
 import React from "react";
 import journalHeaderBg from "../../assets/images/journalHeaderBg.png";
-import dashboardBg from "../../assets/images/background.png";
+import supportBg from "../../assets/images/supportImage.png";
 import Button from "../Common Components/Button";
 import Card from "../Common Components/Card";
 import Wrapper from "../Common Components/Wrapper";
@@ -32,7 +32,7 @@ export default function GroundingToolLibrary() {
       {/* About */}
       <section className=" h-screen mb-10 -mt-24 flex items-center">
         <img
-          src={dashboardBg}
+          src={supportBg}
           alt=""
           className="h-screen absolute top-0 -z-50 w-screen bg-no-repeat object-cover"
         />
@@ -46,23 +46,27 @@ export default function GroundingToolLibrary() {
           <p className="text-center font-normal text-4xl">
           Access tools and exercises to stay grounded during moments of dissociation.
           </p>
-          <Button text={"Explore tools"} bgColor={"bg-slate-200"} />
+          <Button text={"Explore tools"} href="#grounding-techniques" properties={"bg-white text-black"}/>
         </div>
       </section>
 
       {/*  Exercises */}
 
-      <Wrapper bgColor="bg-light-purple ">
+<section id="grounding-techniques">
+
+      <Wrapper properties="h-screen bg-light-purple ">
        <GuidedBreathing/>
         </Wrapper>
 
-        <Wrapper>
+        <Wrapper properties={"h-screen"}>
        <SensoryExercises/>
         </Wrapper>
 
+        <Wrapper properties={"bg-light-purple flex justify-center"}>
+          <Button text={"More Techniques will be added soon!"}  properties={"font-semibold text-2xl bg-greyish-purple text-white min-w-32 "}/>
+        </Wrapper>
 
-
-
+        </section>
 
     </>
   );

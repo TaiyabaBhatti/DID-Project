@@ -16,7 +16,7 @@ const  colorSchema =color;
 
 let chartData =data && weeklyUserData(data,startOfWeek,endOfWeek);
 
-console.log(data,chartData)
+
 
 let caption = [];
 let vizualData = [];
@@ -75,7 +75,13 @@ let vizualData = [];
 
   return (
     <div className="w-[400px] h-[400px]">
-       <Pie data={dataSet} options={options}/>
+      {chartData.length === 0 ?
+        <div className="flex items-center text-2xl">
+      <p className="text-greyish-purple font-semibold text-lg ">You have not logged any data!</p>
+      <FcEmptyTrash/>
+      
+              </div>   
+      : <Pie data={dataSet} options={options}/>} 
     </div>
 
   )

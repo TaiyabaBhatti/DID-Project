@@ -36,6 +36,7 @@ export default function AllAlters() {
           setAltersData(fetchedAltersData);
           console.log("Fetched Alters documents:");
         } else if (altersQuerySnapshot.empty) {
+          setLoading(false);
           NotificationPopup("Not Found Any Alter for this user", "info");
           console.log("No documents found for this user.");
         }
@@ -57,7 +58,7 @@ export default function AllAlters() {
 
 <div className="flex flex-col gap-y-3">
 
- {altersData ? (
+ {altersData ? 
               altersData.map((alter, index) => (
                 <div
                   key={index}
@@ -66,13 +67,13 @@ export default function AllAlters() {
                 >
                   
        <FcPodiumWithSpeaker/>
-        <p className="font-normal text-2xl">{alter.name}</p>
+        <p className="font-normal text-2xl">{alter.role}</p>
       </div>
                 
               ))
-            ) : (
-              <LoadingAnim />
-            )}
+            : 
+             loading && <LoadingAnim />
+            }
 
 </div>
 
@@ -81,6 +82,7 @@ export default function AllAlters() {
           classname=""
           text={"Add Alter"}
           to={"/system-profiles/add-alter"}
+          properties={"bg-white text-black"} 
         />
       </div>
     </PatientProfile>

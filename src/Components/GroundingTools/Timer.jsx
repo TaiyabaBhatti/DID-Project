@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 export default function Timer({active}) {
 
    const timeVar = 30;
-   const [remainingTime,setReamaining] = useState(timeVar);
+   const [remainingTime,setRemaining] = useState(timeVar);
    
 
      const time = {
@@ -16,13 +16,18 @@ export default function Timer({active}) {
 const intervalId = setInterval(()=>{
 
 
-setReamaining((prev)=>{
+setRemaining((prev)=>{
 
+
+if(prev<10 && prev > 0){
+  // return "0"+ prev;
+}
 
 
     if(prev <=0){
-        clearInterval(intervalId); // Clear the interval when time reaches 0
-        return 0;
+        // clearInterval(intervalId);
+         // Clear the interval when time reaches 0
+        return 30;
     }
 
 
@@ -40,7 +45,7 @@ return () => clearInterval(intervalId);
      },[active]);
   return (
     <div>
-      <p className='text-3xl font-normal'>00:{remainingTime}</p>
+      <p className='text-3xl font-normal'>00:{remainingTime<10?"0"+remainingTime:remainingTime}</p>
     </div>
   )
 }

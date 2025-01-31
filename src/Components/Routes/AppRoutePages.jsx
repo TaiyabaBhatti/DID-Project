@@ -18,6 +18,7 @@ import AllNotes from '../Journalling/AllNotes'
 import AllAlters from '../Alters/AllAlters'
 import EditProfile from '../Profile/EditProfile'
 import CreateAlter from '../Alters/CreateAlter'
+import HelpPage from '../Support/HelpPage'
 
 
 
@@ -34,6 +35,7 @@ export default function AppRoutePages() {
   <Route path="/account" element={<AccountPage/>}/>
   <Route path="/dashboard" element={<Dashboard/>}/>
   <Route path="/support" element={<ProtectedRoute><SupportPage/></ProtectedRoute>}/>
+  <Route path="/support/help-page" element={<ProtectedRoute><HelpPage/></ProtectedRoute>}/>
   <Route path="/moodtracker" element={<ProtectedRoute><MoodTracker/></ProtectedRoute>}/>
   <Route path="/journal" element={<ProtectedRoute><Journal/></ProtectedRoute>}/>
   <Route path="/journal/workspace" element={<ProtectedRoute><Workspace/></ProtectedRoute>}/>

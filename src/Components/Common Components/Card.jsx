@@ -12,13 +12,13 @@ export default function Card({
 
 }) {
   return (
-    <div className={`h-64 p-10 w-[510px]  flex flex-col items-center rounded-2xl gap-y-2  text-white justify-center ${background} opacity-80`} >
+    <div className={`h-64 p-10 flex-1 flex flex-col items-center rounded-2xl gap-y-2  text-white justify-center ${background} opacity-80`} >
       <h1 className='text-center font-semibold text-3xl'>{contentHead}</h1>
       <p className="text-center font-normal text-2xl">{contentDesc}</p>
       <Button
         text={btnText}
-        bgColor={btnBgColor}
-        textColor={btnTextColor}
+      
+        properties={`${btnTextColor} ${btnBgColor}`}
         to={to}
       />
     </div>

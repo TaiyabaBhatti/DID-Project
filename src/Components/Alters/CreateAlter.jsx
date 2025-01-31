@@ -128,12 +128,16 @@ const altersColRef = collection(docRef,"Alters");
     Favourite Color
   </label>
 
-<select name="favouriteColor" {...register("favouriteColor")}  className={` outline-none  w-fit  rounded-2xl px-5 py-3`}  autoComplete="favouriteColor" id="favouriteColor">
-  <option value="orange" className='bg-orange-400'>Orange</option>
-  <option value="red" className='bg-red-400'>Red</option>
-  <option value="blue" className='bg-blue-600'>Blue</option>
-  <option value="pink" className='bg-pink-500'>Pink</option>
-</select>
+
+
+<input
+      {...register("favouriteColor")}
+      type="color"
+      id="favouriteColor"
+      defaultValue={"#ff5733"}
+      className="w-40 h-10 rounded-lg border-none cursor-pointer bg-transparent"
+    />
+
 
 
   {/* <input
@@ -157,8 +161,8 @@ const altersColRef = collection(docRef,"Alters");
  
 <textarea name="description" id="description"
 autoComplete="description"
-className="rounded-2xl px-5 py-3 outline-none"
-    placeholder="description"
+className="rounded-2xl px-5 py-2 outline-none"
+    placeholder="About your current behaviour"
     {...register("description")}
     rows={5}
     minLength={5}
@@ -177,7 +181,7 @@ className="rounded-2xl px-5 py-3 outline-none"
 
 
   <Button text={"Save Changes"} type={"submit"}  
-  bgColor={"bg-light-purple"} textColor={"text-greyish-purple"}
+   properties={"bg-light-purple text-greyish-purple"} 
  />
     </form>
     </div>

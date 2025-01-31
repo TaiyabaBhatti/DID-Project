@@ -154,7 +154,7 @@ const submitJournal = async (data) => {
 
 <ReactQuill theme="snow" value={journalData.content} modules={modules} className=' ' onChange={handleTextEditorContent} placeholder="Write your journal entry here..."/>
 
-   <Button text={"Save Journal"} type={"submit"} bgColor={"bg-light-purple"}
+   <Button text={"Save Journal"} type={"submit"}  properties={"bg-light-purple text-black"}
             />
 
      </form>

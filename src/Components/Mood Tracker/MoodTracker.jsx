@@ -31,14 +31,10 @@ console.log(emotionTriggerData)
     {/* mood tracker about */}
    
 
-    <section className="h-screen mb-10 -mt-24 flex items-center">
+    <section className=" mb-10 bg-dark-purple px-10 -mt-24 flex items-center min-h-screen">
             {/* dashboard-about-screen-bg-image */}
-            <img
-              src={dashboardBg}
-              alt=""
-              className="h-full absolute top-0 -z-50 w-screen bg-no-repeat"
-            />
-            <div className='px-10 flex flex-row items-center justify-between align-middle'>
+           
+            <div className='flex flex-col xmd:flex-row items-center justify-between align-middle xmd:mt-0 mt-56'>
             <div
               id="dashboard-about-heading"
               className=" flex flex-col items-start gap-y-6 text-white"
@@ -47,7 +43,9 @@ console.log(emotionTriggerData)
               <p className=" font-normal text-4xl">
                 Hello, {patientName || "..."} ! How are you feeling today?
               </p>
-              <Button text={"Explore dashboard"} bgColor={"bg-slate-200"} />
+              <Button text={"Explore Tracker"}  properties={"bg-white text-black"}
+              href="#explore-moodtracker"
+              />
              
             </div>
 
@@ -55,7 +53,7 @@ console.log(emotionTriggerData)
 <img
               src={moodTrackerAbout}
               alt=""
-              className=" max-w-md"
+              className=" max-w-md "
             />
 
 </div>
@@ -63,9 +61,12 @@ console.log(emotionTriggerData)
         
           </section>
     
+
+<section id='explore-moodtracker'>
+
  {/* mood tracker form */}
 
- <Wrapper height='h-screen'>
+ <Wrapper properties={"h-screen"}>
   {/* heading and tile */}
   <div className='text-black'>
     <h1 className='font-semibold text-4xl text-center'>How are you feeling today?</h1>
@@ -93,15 +94,16 @@ console.log(emotionTriggerData)
 <Wrapper>
   {/* heading and tile */}
 <div className='flex gap-y-5 flex-col items-center'>
-    <div className='text-black'>
-    <h1 className='font-semibold text-4xl text-center'>Daily Report</h1>
-    </div>
+  
+    <h1 className='font-semibold text-4xl text-center mb-5'>Daily Report</h1>
+   
    
    <DailyEmotionTrigger data={emotionTriggerData}/>
  
    </div>
 </Wrapper>
 
+</section>
  
 
 

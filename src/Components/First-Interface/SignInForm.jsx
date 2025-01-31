@@ -232,13 +232,13 @@ setLoading(false)
               )}
             </div>
 
-            <Button text={"Sign Up"} type={"submit"} />
+            <Button text={"Sign Up"} type={"submit"} properties={"bg-light-purple text-greyish-purple"}/>
           </form>
 
-          <span className="text-white text-right font-medium text-sm ">
-            Already have an account?
+          <span className="text-white  text-right font-medium text-sm ">
+            Already have an account?{" "}
             <button className="font-bold" onClick={accountPage}>
-              {" "}
+
               Login
             </button>
           </span>

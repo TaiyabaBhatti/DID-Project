@@ -49,7 +49,7 @@ const toggleMenu = () =>{
 
 }
   return (
-   <nav className='relative z-10 px-12 py-9 flex flex-row justify-between items-center  h-24'>
+   <nav className='relative z-10 px-10 py-9 flex flex-row justify-between items-center  h-24'>
     <div id='left-logo'>
         <h1 className='font-bold text-3xl text-light-purple'>
 Balance Beacon
@@ -57,9 +57,11 @@ Balance Beacon
     </div>
 
     <div id='right-navlinks' className='text-3xl text-white font-extrabold flex flex-row items-center gap-x-4'>
-       <IoNotifications/>
+       {authSuccess && <IoNotifications/>}
+       
         <Link to="/account">< FaRegCircleUser /></Link>
-        <button onClick={toggleMenu}><FaBars /></button>
+        {authSuccess &&  <button onClick={toggleMenu}><FaBars /></button>}
+       
     </div>
 
 {isMenu && 
