@@ -116,7 +116,7 @@ setLoading(false)
         <div
           className={` ${
             loading ? "blur-sm" : ""
-          }  max-w-lg m-auto relative rounded-2xl px-12 py-6   bg-opacity-25 flex flex-col bg-white  gap-y-8 `}
+          }  w-[calc(100vh-150px)] md:w-[555px] m-auto relative rounded-2xl px-12 py-6   bg-opacity-25 flex flex-col bg-white  gap-y-8 `}
         >
           <div>
             <h1 className="font-semibold text-4xl text-center text-white">

@@ -39,9 +39,9 @@ export default function Journal() {
         </Content>
       </section>
 <section id="explore-journaling">
-<Wrapper height="h-screen" centerHV="flex items-center justify-center">
-        <div className="flex flex-row gap-5 items-center justify-center m-auto text-black ">
-          <div className="flex bg-light-purple p-5 rounded-md flex-col gap-y-2 items-center">
+<Wrapper properties={" md:flex-row m-auto flex justify-center gap-5 flex-col  items-center  m-auto text-black "}>
+       
+          <div className=" flex bg-light-purple p-5 rounded-md flex-col gap-y-2 items-center">
             <Lottie
               animationData={editor}
               loop
@@ -68,7 +68,7 @@ export default function Journal() {
               properties={"text-white bg-greyish-purple "}
             />
           </div>
-        </div>
+       
       </Wrapper>
 </section>
 

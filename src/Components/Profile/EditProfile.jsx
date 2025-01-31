@@ -125,7 +125,7 @@ await reauthenticateWithCredential(currUser, credentials);
 <div className='relative'>
 
 <div className={loading?"blur-sm":""}>
-<form className="flex flex-col text-black gap-y-2 w-[555px]"
+<form className="flex flex-col text-black gap-y-2 w-fit md:w-[555px]"
     action='post'
    onSubmit={handleSubmit((data)=>{
   editProfile(data);

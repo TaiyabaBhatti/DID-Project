@@ -7,6 +7,25 @@
     scroll-behavior: smooth;
 }
 
+@layer base {
+    html {
+      @apply text-lg;
+    }
+  
+    @media (max-width: 768px) {
+      html {
+        @apply text-base ;
+      }
+    }
+  
+    @media (max-width: 640px) {
+      html {
+        @apply text-xs;
+      }
+    }
+}
+
+
 /* width */
 ::-webkit-scrollbar {
     width: 7px;

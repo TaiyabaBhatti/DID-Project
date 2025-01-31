@@ -27,7 +27,8 @@ const signInPage = () =>{
 
   return (
    <>
-         <section className="h-[600px]">
+         <section className="h-[600px] justify-center flex items-center
+         ">
            {/* dashboard-about-screen-bg-image */}
            <img
              src={accountBg}
