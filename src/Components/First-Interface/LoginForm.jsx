@@ -31,7 +31,6 @@ export default function LoginForm({accountPage}) {
 
     if (authSuccess) {
       console.log("Already Logged in");
-      NotificationPopup("Successfully Logged In", "success");
         navigate("/dashboard");
      
     } 

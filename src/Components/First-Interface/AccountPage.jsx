@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import accountBg from "../../assets/images/accountBg.png";
+import accountBg from "../../assets/images/accountBg.jpg";
 import Button from "../Common Components/Button";
 import LoginForm from './LoginForm';
 import SignInForm from './SignInForm';

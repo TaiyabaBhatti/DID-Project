@@ -1,10 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
-import Header from "../Common Components/Header";
-import dashboardBg from "../../assets/images/background.png";
+import dashboardBg from "../../assets/images/background.jpg";
 import Card from "../Common Components/Card";
 import Button from "../Common Components/Button";
-import { Outlet } from "react-router-dom";
-import Footer from "../Common Components/Footer";
 import Wrapper from "../Common Components/Wrapper";
 import AuthContext from "../context/authContext";
 import LoadingAnim from "../Common Components/LoadingAnim";

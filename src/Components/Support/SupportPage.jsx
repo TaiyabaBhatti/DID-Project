@@ -1,6 +1,6 @@
 import React from 'react'
 import Button from "../Common Components/Button";
-import supportBg from "../../assets/images/supportImage.png";
+import supportBg from "../../assets/images/supportImage.jpg";
 import supportLine from "../../assets/images/supportLineImage.png";
 
 import meditation from "../../assets/images/meditation.png";

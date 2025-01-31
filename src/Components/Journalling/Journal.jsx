@@ -1,7 +1,7 @@
 import React from "react";
 
 import Header from "../Common Components/Header";
-import journalBg from "../../assets/images/JournalBg.png";
+import journalBg from "../../assets/images/JournalBg.jpg";
 import journalCornerBg from "../../assets/images/journalCornerBg.png";
 import Card from "../Common Components/Card";
 import Button from "../Common Components/Button";

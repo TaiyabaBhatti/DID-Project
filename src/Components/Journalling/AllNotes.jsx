@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import TextEditor from "./TextEditor";
-import journalHeaderBg from "../../assets/images/journalHeaderBg.png";
+import journalHeaderBg from "../../assets/images/journalHeaderBg.jpg";
 import Card from "../Common Components/Card";
 import Notes from "../Common Components/Notes";
 import AuthContext from "../context/authContext";

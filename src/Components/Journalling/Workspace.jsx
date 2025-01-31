@@ -1,10 +1,7 @@
 import React,{useState} from 'react'
 import TextEditor from './TextEditor'
-import journalHeaderBg from "../../assets/images/journalHeaderBg.png";
-import Card from '../Common Components/Card';
-import Notes from '../Common Components/Notes';
-import Button from '../Common Components/Button';
-import AllNotes from './AllNotes';
+import journalHeaderBg from "../../assets/images/journalHeaderBg.jpg";
+
 import PastPage from '../Common Components/PastPage';
 import Wrapper from '../Common Components/Wrapper';
 
