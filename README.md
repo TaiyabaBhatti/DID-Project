@@ -5,7 +5,7 @@ A web application built with *React* and *Firebase* to create awareness and prov
 ---
 
 ## Screenshots
-![Authentication](https://github.com/TaiyabaBhatti/DID-Project/blob/main/src/assets/attachments/LoginPage.png)![dashboard](https://github.com/TaiyabaBhatti/DID-Project/blob/main/src/assets/attachments/menu%20bar.png)![visual charts](https://github.com/TaiyabaBhatti/DID-Project/blob/main/src/assets/attachments/visualcharts.png)![grounding techniques](https://github.com/TaiyabaBhatti/DID-Project/blob/main/src/assets/attachments/groundingtechniques.png)![support resources](https://github.com/TaiyabaBhatti/DID-Project/blob/main/src/assets/attachments/resources.png)![journaling](https://github.com/TaiyabaBhatti/DID-Project/blob/main/src/assets/attachments/journaling.png)
+![Mockup]()
 
 
 
