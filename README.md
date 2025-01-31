@@ -5,11 +5,11 @@ A web application built with *React* and *Firebase* to create awareness and prov
 ---
 
 ## Screenshots
-![Untitled design](https://github.com/user-attachments/assets/eaf72efe-3bdd-4fc7-b8be-a06eee9a83a9)
-![auth](https://github.com/user-attachments/assets/905c82ac-41d5-4d57-aa1d-2964504fc997)
-![auth (1)](https://github.com/user-attachments/assets/1283de69-b751-43e5-a9ef-025377ae8727)
-![features](https://github.com/user-attachments/assets/db796cc5-5974-4832-8220-8eea2ac97953)
-![features (1)](https://github.com/user-attachments/assets/3d492aaf-1a1c-4be1-b1c6-7f1ad5a2e10e)
+![Authentication](https://github.com/TaiyabaBhatti/DID-Project/blob/main/src/assets/attachments/LoginPage.png)
+![dashboard]()
+![moodtracker]()
+![grounding techniques]()
+![support resources]()
 
 
 
