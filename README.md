@@ -8,7 +8,7 @@ A web application built with *React* and *Firebase* to create awareness and prov
 ![Mockup](https://github.com/TaiyabaBhatti/DID-Project/blob/main/src/assets/attachments/Mockup-preview.png)
 
 ## Presentation Slides
-[Slides pdf](https://github.com/TaiyabaBhatti/DID-Project/blob/main/Balance%20Beacon.pdf)
+
 [Canva Slides Link](https://github.com/TaiyabaBhatti/DID-Project/blob/main/Balance%20Beacon.pdf)
 
 ## Inspiration to develop
